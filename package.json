@@ -1,0 +1,22 @@
+{
+  "name": "tiny_merchent_on_cloud",
+  "version": "0.0.1",
+  "description": "Tiny Merchent on cloud v1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmoc-game/v1.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "tmoc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmoc-game/v1/issues"
+  },
+  "homepage": "https://github.com/tmoc-game/v1#readme"
+}
