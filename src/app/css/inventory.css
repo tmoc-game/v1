@@ -1,0 +1,21 @@
+.price_table, .price_table > th, .price_table > td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.price_table > th, .price_table > td {
+  padding: 15px;
+}
+
+.inventory_button {
+  width: 100px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: pink;
+}

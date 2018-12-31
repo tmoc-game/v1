@@ -4,16 +4,21 @@ import PropTypes from 'prop-types';
 import Header from '../../components/header';
 import { testAction } from '../../redux/status/actions';
 
-function Login(props) {
+import '../../css/menu.css';
+
+function Menu(props) {
   if (props.st === null) setTimeout(props.testAction, 1000);
   return (
     <div>
       <Header title={'Menu'}></Header>
-      <h2>{props.st}</h2>
+      <div className="menu_div">
+        <p><button>Start a new game</button></p>
+        <p><button>Continue the game</button></p>
+      </div>
     </div>);
 }
 
-Login.propTypes = {
+Menu.propTypes = {
   st: PropTypes.string,
   testAction: PropTypes.func,
 };
@@ -30,9 +35,9 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const LoginView = connect(
+const MenuView = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Login);
+)(Menu);
 
-export default LoginView;
+export default MenuView;

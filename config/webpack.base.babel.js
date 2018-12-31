@@ -25,16 +25,15 @@ module.exports = (options) => ({
         },
       },
       {
+        // Preprocess 3rd party .css files located in node_modules
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         // Preprocess our own .scss files
         test: /\.scss$/,
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
-        // Preprocess 3rd party .css files located in node_modules
-        test: /\.css$/,
-        include: /node_modules/,
-        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(eot|svg|otf|ttf|woff|woff2)$/,

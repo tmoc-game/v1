@@ -1,0 +1,11 @@
+
+.header {
+  background-color: gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.header > h1 {
+  margin: 0px;
+  padding: 0px;
+}
