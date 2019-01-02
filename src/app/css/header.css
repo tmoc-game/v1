@@ -1,11 +1,16 @@
 
 .header {
-  background-color: gray;
+  background-color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  display: flex;
 }
 .header > h1 {
   margin: 0px;
   padding: 0px;
+}
+
+.header > h1 > div {
+  display: inline;
 }

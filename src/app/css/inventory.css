@@ -19,3 +19,7 @@
   border-radius: 8px;
   background-color: pink;
 }
+
+.left_div{
+  float: left;
+}

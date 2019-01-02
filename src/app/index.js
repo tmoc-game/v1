@@ -9,6 +9,9 @@ import createStore from './redux/createStore';
 import LoginPage from './pages/login';
 import MenuPage from './pages/menu';
 import InventoryPage from './pages/inventory';
+import SellPage from './pages/sell';
+import BuyPage from './pages/buy';
+import EndPage from './pages/ending';
 
 import './css/css.css';
 
@@ -23,6 +26,9 @@ ReactDOM.render(
         <Route path="/login" component={LoginPage} />
         <Route path="/menu" component={MenuPage} />
         <Route path="/inventory" component={InventoryPage} />
+        <Route path="/sell" component={SellPage} />
+        <Route path="/buy" component={BuyPage} />
+        <Route path="/ending" component={EndPage} />
       </div>
     </Router>
   </Provider>,

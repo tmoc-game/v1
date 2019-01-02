@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../../components/header';
 import { testAction } from '../../redux/status/actions';
 
 import '../../css/menu.css';
@@ -10,10 +10,17 @@ function Menu(props) {
   if (props.st === null) setTimeout(props.testAction, 1000);
   return (
     <div>
-      <Header title={'Menu'}></Header>
       <div className="menu_div">
-        <p><button>Start a new game</button></p>
-        <p><button>Continue the game</button></p>
+        <p>
+          <Link to="inventory">
+            <button className="menu_button">Start a new game</button>
+          </Link>
+        </p>
+        <p>
+          <Link to="inventory">
+            <button className="menu_button">Continue the game</button>
+          </Link>
+        </p>
       </div>
     </div>);
 }
