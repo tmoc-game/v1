@@ -63,6 +63,7 @@
 }
 .button_div {
   clear : both;
+  display : flex;
   margin-left : 35px;
   margin-right: 35px;
 }

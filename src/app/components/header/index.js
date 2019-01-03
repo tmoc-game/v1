@@ -10,7 +10,7 @@ export default function Header() {
         <div className="inline_div" >
           <img alt="Back" src="/image/backArrow.png" width={75} height={75} />
         </div>
-        <div className="inline_div" background-color="lightgray" >
+        <div className="inline_div" >
           <img alt="inventory" src="/image/inventory.png" width={75} height={75} />100 / 300
         </div>
         <div className="inline_div"> $20,000 </div>
