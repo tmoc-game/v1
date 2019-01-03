@@ -1,6 +1,5 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import Nav from '../../components/nav';
 import Header from '../../components/header';
 import '../../css/buy.css';
 
@@ -8,72 +7,119 @@ export default function Buy() {
   return (
     <div>
       <Header></Header>
-      <div className="left_div">
-        <table className="buy_table">
-          <tbody>
-            <tr>
-              <td bgcolor="lightblue">
-                <div style={{ display: 'flex' }}>
-                  <div className="left_div">
-                    <img alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
-                  </div>
-                  <div> price : $50 <br />amount : 100
-                  </div>
-                </div>
-              </td>
-              <td>
-                <div style={{ display: 'flex' }}>
-                  <div className="left_div">
-                    <img alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
-                  </div>
-                  <div> price : $50 <br />amount : 100
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div className="left_div">
-                  <img alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
-                </div>
-                <div> price : $50 <br />amount : 100
-                </div>
-              </td>
-              <td>
-                <div className="left_div">
-                  <img alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
-                </div>
-                <div> price : $50 <br />amount : 100
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <table>
-          <tr>
-            <td>
-              <img altimg alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
-            </td>
-            <td>
-              <div>price : $50 <br />amount: 100
-              </div>
-            </td>
-          </tr>
-        </table>
-        <div className="slidecontainer">
-          <input type="range" min={1} max={57} defaultValue={0} className="slider" id="myRange" /> 20
+      <div className="inventory_div">
+        <div className="inventory_one_div">
+          <div className="left_div">
+            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
+          </div>
+          <div className="left_div">
+            <div style={{ fontSize: '30px' }}>
+              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
+            </div>
+            <div style={{ fontSize: '30px' }}>
+              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+            </div>
+          </div>
         </div>
-        <div> average price: $40 </div>
-        <div className="inline_div"> total cost: $80</div>
-        <div className="inline_div"> amount: 30</div>
-        <div className="inline_div"> Max</div>
-        <div className="inline_div"> Buy</div>
+        <div className="inventory_one_div">
+          <div className="left_div">
+            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
+          </div>
+          <div className="left_div">
+            <div style={{ fontSize: '30px' }}>
+              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
+            </div>
+            <div style={{ fontSize: '30px' }}>
+              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+            </div>
+          </div>
+        </div>
+        <div className="inventory_one_div">
+          <div className="left_div">
+            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
+          </div>
+          <div className="left_div">
+            <div style={{ fontSize: '30px' }}>
+              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
+            </div>
+            <div style={{ fontSize: '30px' }}>
+              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+            </div>
+          </div>
+        </div>
+        <div className="inventory_one_div" clear="both">
+          <div className="left_div">
+            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
+          </div>
+          <div className="left_div">
+            <div style={{ fontSize: '30px' }}>
+              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
+            </div>
+            <div style={{ fontSize: '30px' }}>
+              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+            </div>
+          </div>
+        </div>
+        <div className="inventory_one_div" clear="both">
+          <div className="left_div">
+            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
+          </div>
+          <div className="left_div">
+            <div style={{ fontSize: '30px' }}>
+              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
+            </div>
+            <div style={{ fontSize: '30px' }}>
+              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+            </div>
+          </div>
+        </div>
+        <div className="inventory_one_div" clear="both">
+          <div className="left_div">
+            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
+          </div>
+          <div className="left_div">
+            <div style={{ fontSize: '30px' }}>
+              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
+            </div>
+            <div style={{ fontSize: '30px' }}>
+              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+            </div>
+          </div>
+        </div>
       </div>
-      <div style={{ clear: 'left' }}>
-        <Nav one={'inventory'} two={'sell'}></Nav>
+      <div className="content_div">
+        <div className="content_one_div">
+          <div className="left_div">
+            <img alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
+          </div>
+          <div className="left_div">
+            <div><img alt="coin" src="/image/coin.jpg" width="30" height="30" />80</div>
+            <div><img alt="coin" src="/image/inventory.png" width="30" height="30" />80</div>
+          </div>
+        </div>
+        <div className="content_one_div">cucumber</div>
+        <div className="content_one_div">
+          <div className="slidecontainer">
+            <input type="range" min="1" max="57" value="0" className="slider" id="myRange" />
+          </div>
+        </div>
+        <div className="content_one_div">inventory average<br />
+          <img alt="coin" src="/image/coin.jpg" width="30" height="30" />80
+        </div>
       </div>
-    </div>
-  );
+      <div className="button_div">
+        <div className="left_div" style={{ fontSize: '50px' }}>cost :
+          <img alt="coin" src="/image/coin.jpg" width="100" height="100" /> 2000
+        </div>
+        <div className="left_div" style={{ fontSize: '50px' }}>
+          <img alt="inventory" src="/image/inventory.png" width="100" height="100" /> 2000
+        </div>
+        <div className="left_div">
+          <button className="inventory_button">Max</button>
+        </div>
+        <div className="left_div">
+          <button className="inventory_button">Buy</button>
+        </div>
+      </div>
+    </div>);
 }

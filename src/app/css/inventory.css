@@ -1,25 +1,68 @@
-.price_table, .price_table > th, .price_table > td {
+.inventory_div {
+  width : 60%;
+  margin-left : 35px;
+  margin-bottom : 35px;
+  margin-top: 10px;
+  float: left;
+  border : 1px solid black;
+  border-radius : 15px;
+  height : 430px;
+}
+.inventory_one_div {
+  border : 1px solid black;
+  float: left;
+  margin: auto;
+  padding : 10px;
+}
+.left_div {
+  float : left;
+}
+.content_div {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 35px;
   border: 1px solid black;
-  border-collapse: collapse;
+  border-radius: 15px;
+  float : left;
+  height : 380px;
+  width : 30%;
 }
-.price_table > th, .price_table > td {
-  padding: 15px;
+.content_one_div {
+  text-align: center;
+  margin: auto;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color : rgb(247, 95, 120);
+  height : 120px;
 }
-
+.content_button {
+  width: 250px;
+  height : 100px;
+  border: 2px solid;
+  color: rgb(247, 95, 120);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 15px;
+}
 .inventory_button {
-  width: 100px;
+  width: 150px;
+  height : 100px;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 50px;
   margin: 4px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 50%;
   background-color: pink;
 }
-
-.left_div{
-  float: left;
+.button_div {
+  clear : both;
+  margin-left : 35px;
+  margin-right: 35px;
 }

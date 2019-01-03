@@ -1,7 +1,6 @@
 
 .header {
-  background-color: white;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
   padding-left: 10px;
   display: flex;
@@ -11,6 +10,14 @@
   padding: 0px;
 }
 
-.header > h1 > div {
+.inline_div {
   display: inline;
+  margin: 35px;
+  font-size: 75px;
+  color: Royalblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+img {
+  vertical-align: middle;
+  margin-bottom: 0.25em;
 }

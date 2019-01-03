@@ -1,13 +1,59 @@
-.buy_table, .buy_table > tbody > tr > td, .buy_table > tbody > tr > th {
-  border: 1px solid black;
-  border-collapse: collapse;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
-.buy_table > tbody > tr > td {
-  padding: 15px;
-}
-.left_div{
+
+.inventory_div {
+  width : 60%;
+  margin-left : 35px;
+  margin-bottom : 35px;
+  margin-top: 10px;
   float: left;
+  border : 1px solid black;
+  border-radius : 15px;
+  height : 430px;
 }
-.inline_div {
-  display: inline;
+.inventory_one_div {
+  border : 1px solid black;
+  float: left;
+  margin : 3px;
+  padding : 10px;
+}
+.left_div {
+  float : left;
+}
+.content_div {
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  border: 1px solid black;
+  border-radius: 15px;
+  float : left;
+  height : 380px;
+  width : 30%;
+}
+.content_one_div {
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  color : rgb(247, 95, 120);
+  height : 120px;
+  align-content: center;
+}
+.inventory_button {
+  width: 150px;
+  height : 100px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: pink;
+}
+.button_div {
+  clear : both;
+  margin-left : 35px;
+  margin-right: 35px;
 }
