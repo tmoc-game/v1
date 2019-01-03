@@ -23,9 +23,86 @@
 * 물품 판매 화면 - 보유 물품 리스트가 나타나고, 각 물품의 현재 가격이 표시 된다. 현재 가격 옆에는 해당 물품의 개당 평균 금액보다 현재 가격이 높으면 이익 표시, 반대면 손해 표시, 같다면 아무 표시도 하지 않는다. 해당 물품을 사용자가 지정한 갯수 만큼 판매가 가능 하다.
 * 엔딩 화면 - 100일째 되는날 다음날(턴)로 넘길 경우 표현 되는 화면으로 Usecase에 정의된 내용이 표현 된다.
 
+### Data 구조
+
+#### Server
+* 기본 가격 테이블
+Finish_day:number // 게임 플레이 
+```
+inventory = {
+  [level:number] : {
+    size: number,
+    upgrade_price: number,
+    daily_price: number
+  }...
+}
+
+products = {
+  [code:number] : {
+    label: string     // 제품 명
+    kind: number      // 0 으로 고정
+    min_price: number // 제품 최소 가격
+    max_price: number // 제품 최대 가격
+    max_quantity: number
+    min_quantity: number
+    use_inventory_slot: number  // 한개의 제품이 차지하는 인벤토리 크기 ==> 현재는 1로 고정 하자!!
+  }...
+}
+```
+
+* 개인 상태 정보
+```
+game_status = {
+  day: number // 게임 진행 일자
+  inventory_level: number // 1 = 50, 2 = 100
+  inventory: {
+    [products_code]: {
+      quantity: number
+      avg_buying_price: number
+    }...
+  }
+}
+```
+
+* 100일 동안의 물품 가격 리스트
+product_price_table = [
+  {
+    [products_code]: {
+      price: number
+      qunatity: number
+    }...
+  }
+]
+
+* 거래 기록 
+trade_history = [
+  {
+    day: number,
+    product_code: number,
+    quantity: number,
+    price: number
+  }
+]
+
+#### Client ( Redux 구조 )
+* 개인 상태 정보
+game_status = {
+  -- same as server
+}
+
+products = {
+  -- same as server
+}
+
+product_price_table = {
+  [products_code]: {
+    --- same as server 
+  }
+}
+
 ### Todo List
-[] UI Html 작성
-[] 프로젝트 구성 (React.js + Redux + Axio + Node.js + Express)
+[V] UI Html 작성
+[V] 프로젝트 구성 (React.js + Redux + Axio + Node.js + Express)
 [] 데이터 구조 정의
 [] Restful api 정의 (기능 기준)
 [] 로그인 로직 구현
