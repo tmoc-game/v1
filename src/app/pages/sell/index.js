@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../../components/header';
+
+import GameBoard from '../../components/gameboard';
 import '../../css/buy.css';
 
-export default function Sell() {
+function Sell() {
   return (
     <div>
-      <Header></Header>
       <div className="inventory_div">
         <div className="inventory_one_div">
           <div className="left_div">
@@ -122,3 +122,10 @@ export default function Sell() {
       </div>
     </div>);
 }
+
+Sell.propTypes = {
+};
+
+const SellView = GameBoard(Sell);
+
+export default SellView;
