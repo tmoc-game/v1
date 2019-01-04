@@ -9,8 +9,7 @@ router.get('/load_default_settings', (req, res) => {
   res.json({
     finish_day: 100,
     products,
-    inventory,
-    game_status: gameStatus.getCurrentStatus(),
+    inventory
   });
 });
 

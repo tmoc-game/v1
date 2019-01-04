@@ -13,10 +13,15 @@ import SellPage from './pages/sell';
 import BuyPage from './pages/buy';
 import EndPage from './pages/ending';
 
+import { loadDefaultSettings } from './redux/static/actions';
+
 import './css/css.css';
 
 const MOUNT_NODE = document.getElementById('app');
 const store = createStore();
+
+// Load Default Data
+store.dispatch(loadDefaultSettings());
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { SET_PRODUCTS, SET_INVENTORY, INIT_STATIC_INFORMATION } from '../types';
-import { setGameStatus } from '../status/actions';
 
 export function initStaticInformation(finishDay, products, inventory) {
   return {
@@ -37,7 +36,6 @@ export function loadDefaultSettings() {
           data.products,
           data.inventory,
         ));
-        dispatch(setGameStatus(data.game_status));
       })
       .catch((err) => {
         alert('Default Setting Load fail');

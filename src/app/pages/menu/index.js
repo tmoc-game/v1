@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { loadDefaultSettings } from '../../redux/static/actions';
+import { getCurrentGameStatus } from '../../redux/status/actions';
 
 import '../../css/menu.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Menu extends React.Component {
   componentWillMount() {
-    this.props.loadDefaultSettings();
+    this.props.getCurrentGameStatus();
   }
 
   render() {
@@ -39,7 +39,7 @@ class Menu extends React.Component {
 
 Menu.propTypes = {
   day: PropTypes.number,
-  loadDefaultSettings: PropTypes.func,
+  getCurrentGameStatus: PropTypes.func,
 };
 
 function mapStateToProps(state) {
@@ -50,7 +50,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadDefaultSettings: () => dispatch(loadDefaultSettings()),
+    getCurrentGameStatus: () => dispatch(getCurrentGameStatus()),
   };
 }
 

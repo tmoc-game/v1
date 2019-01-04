@@ -1,0 +1,35 @@
+.inventory_control_box_inner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  height: 100%;
+}
+.inventory_control_rentfee_text {
+  order: 0;
+  width: 100%;
+  padding: 10px;
+}
+.inventory_control_rentfee_text > span {
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color : rgb(247, 95, 120);
+  height : 120px;
+  width: 100%;
+}
+.inventory_control_btn {
+  order:1;
+  flex-grow: 0;
+}
+
+.content_button {
+  width: 250px;
+  height : 100px;
+  border: 2px solid;
+  color: rgb(247, 95, 120);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 15px;
+}

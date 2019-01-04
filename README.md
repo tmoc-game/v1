@@ -63,6 +63,12 @@ game_status = {
       avg_buying_price: number
     }...
   }
+  price_table: {
+    [products_code]: {
+      price: number
+      qunatity: number
+    }...
+  }
 }
 ```
 
@@ -120,10 +126,7 @@ product_price_table = {
 {
   "finish_day": number,
   "products": { -- same as server },
-  "inventory": { -- same as server },
-  "game_status": {
-    --- same as server
-  }
+  "inventory": { -- same as server }
 }
 
 ```

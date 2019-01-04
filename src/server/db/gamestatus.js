@@ -21,6 +21,32 @@ function getCurrentStatus() {
   };
 }
 
+function getCurrentProductPriceTable() {
+  return {
+    0: {
+      price: 100,
+      quantity: 50,
+    },
+    1: {
+      price: 99,
+      quantity: 33,
+    },
+    2: {
+      price: 23,
+      quantity: 32,
+    },
+    3: {
+      price: 44,
+      quantity: 12,
+    },
+    4: {
+      price: 82,
+      quantity: 32,
+    },
+  };
+}
+
 module.exports = {
-  getCurrentStatus
+  getCurrentStatus,
+  getCurrentProductPriceTable,
 };

@@ -1,0 +1,44 @@
+/** Layout **/
+.inventory_bg {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.inventory_item_list_box {
+  order: 1;
+  display: flex;
+  flex-grow: 4;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 60%;
+
+  min-height : 500px;
+  margin-left : 35px;
+  margin-bottom : 35px;
+  margin-top: 10px;
+  border : 1px solid black;
+  border-radius : 15px;
+}
+
+.inventory_control_box {
+  order: 2;
+  width:30%;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 35px;
+  border: 1px solid black;
+  border-radius: 15px;
+  min-height : 500px;
+  width : 30%;
+}
+
+.inventory_navigate_box {
+  order: 3;
+  display : flex;
+  margin-left : 35px;
+  margin-right: 35px;
+}
+
+/** common **/

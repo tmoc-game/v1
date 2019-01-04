@@ -9,8 +9,8 @@ module.exports = {
       max_quantity: 99,
       min_quantity: 1,
     },
-    use_inventory_slot: 0,
-    image_url: '/images/cocumber.jpeg',
+    use_inventory_slot: 1,
+    image_url: '/image/cucumber.jpeg',
   },
   1: {
     label: 'Carrot',
@@ -21,8 +21,8 @@ module.exports = {
       max_quantity: 99,
       min_quantity: 1,
     },
-    use_inventory_slot: 0,
-    image_url: '/images/cocumber.jpeg',
+    use_inventory_slot: 1,
+    image_url: '/image/cucumber.jpeg',
   },
   2: {
     label: 'Onion',
@@ -33,8 +33,8 @@ module.exports = {
       max_quantity: 99,
       min_quantity: 1,
     },
-    use_inventory_slot: 0,
-    image_url: '/images/cocumber.jpeg',
+    use_inventory_slot: 1,
+    image_url: '/image/cucumber.jpeg',
   },
   3: {
     label: 'Pork',
@@ -45,8 +45,8 @@ module.exports = {
       max_quantity: 99,
       min_quantity: 1,
     },
-    use_inventory_slot: 0,
-    image_url: '/images/cocumber.jpeg',
+    use_inventory_slot: 1,
+    image_url: '/image/cucumber.jpeg',
   },
   4: {
     label: 'Ham',
@@ -57,7 +57,7 @@ module.exports = {
       max_quantity: 99,
       min_quantity: 1,
     },
-    use_inventory_slot: 0,
-    image_url: '/images/cocumber.jpeg',
+    use_inventory_slot: 1,
+    image_url: '/image/cucumber.jpeg',
   }
 };
