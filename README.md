@@ -55,6 +55,7 @@ products = {
 ```
 game_status = {
   day: number // 게임 진행 일자  -2: Not loading yet, -1 : No saved game, if day == finish day == finished
+  money: number // 보유 돈
   inventory_level: number // 1 = 50, 2 = 100
   inventory: {
     [products_code]: {
@@ -127,6 +128,9 @@ product_price_table = {
 
 ```
 * GET /api/game_status    : 현재의 게임 상황을 가져온다.
+{
+  --- same as server
+}
 * GET /api/product_prices : 현재의 상품 정볼르 가져온다.
 
 * GET   /api/loadgame : 저장된 게임을 불러 온다.

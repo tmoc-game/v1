@@ -14,4 +14,10 @@ router.get('/load_default_settings', (req, res) => {
   });
 });
 
+router.get('/game_status', (req, res) => {
+  res.json({
+    ...gameStatus.getCurrentStatus(),
+  });
+});
+
 module.exports = router;
