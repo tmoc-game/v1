@@ -1,9 +1,13 @@
-import { STATUS_INIT } from '../types';
+import { SET_GAME_STATUS } from '../types';
 
-export default function reducer(state = { st: null }, action) {
+const initialState = {
+  day: -2,
+};
+
+export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case STATUS_INIT:
-      return { ...state, st: action.payload };
+    case SET_GAME_STATUS:
+      return { ...action.payload };
     default:
       return state;
   }

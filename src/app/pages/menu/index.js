@@ -2,43 +2,55 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { testAction } from '../../redux/status/actions';
+import { loadDefaultSettings } from '../../redux/static/actions';
 
 import '../../css/menu.css';
 
-function Menu(props) {
-  if (props.st === null) setTimeout(props.testAction, 1000);
-  return (
-    <div>
-      <div className="menu_div">
-        <p>
-          <Link to="inventory">
-            <button className="menu_button">Start a new game</button>
-          </Link>
-        </p>
-        <p>
-          <Link to="inventory">
-            <button className="menu_button">Continue the game</button>
-          </Link>
-        </p>
-      </div>
-    </div>);
+// eslint-disable-next-line react/prefer-stateless-function
+class Menu extends React.Component {
+  componentWillMount() {
+    this.props.loadDefaultSettings();
+  }
+
+  render() {
+    const { day } = this.props;
+    if (day === -2) return <div> Now Loading </div>;
+    return (
+      <div>
+        <div className="menu_div">
+
+          <p>
+            <Link to="inventory">
+              <button className="menu_button">Start a new game</button>
+            </Link>
+          </p>
+          { (day >= 0) ? (
+            <p>
+              <Link to="inventory">
+                <button className="menu_button">Continue the game</button>
+              </Link>
+            </p>
+          ) : null }
+
+        </div>
+      </div>);
+  }
 }
 
 Menu.propTypes = {
-  st: PropTypes.string,
-  testAction: PropTypes.func,
+  day: PropTypes.number,
+  loadDefaultSettings: PropTypes.func,
 };
 
 function mapStateToProps(state) {
   return {
-    st: state.status.st
+    day: state.status.day,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    testAction: () => dispatch(testAction()),
+    loadDefaultSettings: () => dispatch(loadDefaultSettings()),
   };
 }
 

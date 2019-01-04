@@ -2,8 +2,6 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/test', (req, res) => {
-  res.send('hahahaha 2');
-});
+router.use('/api', require('./api'));
 
 module.exports = router;
