@@ -1,0 +1,39 @@
+.inventoryBox{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  padding: 10px;
+  margin-left : 35px;
+  margin-bottom : 35px;
+  margin-top: 10px;
+  border : 1px solid black;
+  border-radius : 15px;
+
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.inventoryBox > div {
+  flex: 0;
+  border : 1px solid black;
+  margin: 10px;
+  padding : 10px;
+  width: 100%;
+  height: 250px;
+}
+
+.inventoryBox > * > .icon {
+  text-align: center;
+}
+.inventoryBox > * > .icon > img {
+  width: 170px;
+  height: 170px;
+}
+
+.inventoryBox > .icon > img {
+  width: 170px;
+  height: 170px;
+  margin: auto;
+}
+

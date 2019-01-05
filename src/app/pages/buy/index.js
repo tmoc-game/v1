@@ -1,11 +1,35 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import GameBoard from '../../components/gameboard';
+import InventoryList from './inventory_list';
+import ItemDetailView from './item_detail_view';
+import BuyNavigator from './navigator';
 
+import './css/layout.css';
 import '../../css/buy.css';
 
-function Buy() {
+function Buy(props) {
+  const { products, currentInventory, gameStatus } = props;
+
+  return (
+    <div className="buyLayout">
+      <div className="itemList">
+        <InventoryList products={products} gameStatus={gameStatus} />
+      </div>
+      <div className="itemDetailView">
+        <ItemDetailView
+          selectedProduceCode="0"
+          products={products}
+          gameStatus={gameStatus}
+          currentInventory={currentInventory}
+        />
+      </div>
+      <div className="tradeBar">
+        <BuyNavigator />
+      </div>
+    </div>);
+  /*
   return (
     <div>
       <div className="inventory_div">
@@ -89,7 +113,7 @@ function Buy() {
         </div>
       </div>
       <div className="content_div">
-        <div className="content_one_div">
+       <div className="content_one_div">
           <div className="left_div">
             <img alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
           </div>
@@ -123,10 +147,12 @@ function Buy() {
         </div>
       </div>
     </div>);
+    */
 }
 Buy.propTypes = {
-  // priceTable: PropTypes.object,
-  // loadProductPrice: PropTypes.func,
+  products: PropTypes.object,
+  gameStatus: PropTypes.object,
+  currentInventory: PropTypes.object,
 };
 
 const BuyView = GameBoard(Buy);

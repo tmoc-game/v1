@@ -1,0 +1,108 @@
+.detail_view_box {
+  display: flex;
+  flex-flow: column;
+  justify-content: left;
+  padding: 10px;
+  margin-left : 35px;
+  margin-right : 35px;
+  margin-bottom : 35px;
+  margin-top: 10px;
+  border : 1px solid black;
+  border-radius : 15px;
+
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.detail_view_box > div {
+  flex: 0;
+  margin: 10px;
+  padding : 10px;
+  width: 100%;
+  height: 250px;
+}
+
+.detail_view_box > .product_info {
+  width: 100%;
+}
+
+.detail_view_box > .product_info > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.detail_view_box > .product_info > div > .icon {
+
+}
+.detail_view_box > .product_info > div > .icon > img {
+  width: 170px;
+  height: 170px;
+  border-style: solid;
+  border: 5;
+  border-color: blue;
+  border-radius: 10px;
+}
+
+.detail_view_box > .product_info > div > .describe {
+  width: 50%;
+  align-self: flex-start;
+}
+.detail_view_box > .product_info > div > .describe > div {
+  display: block;
+  text-align: left;
+}
+.detail_view_box > .product_info > div > .describe > div > img {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.detail_view_box > .product_info > div > .describe > div > span {
+  margin-left: 10px;
+  font-size: 35px;
+  vertical-align: middle;
+}
+
+.detail_view_box > .product_info > div > .describe > .product_name {
+  padding-bottom: 25px;
+}
+
+
+.detail_view_box > div > .buy_quantity {
+
+}
+.detail_view_box > div > .buy_quantity > span {
+  font-size: 35px;
+}
+.detail_view_box > div > .buy_quantity > input {
+  width: 50%;
+}
+
+.detail_view_box > div > .sub_info {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.detail_view_box > div > .sub_info > div {
+  flex-grow: 1;
+}
+
+.detail_view_box > div > .sub_info > div > p {
+  font-size: 35px;
+}
+
+.detail_view_box > div > .sub_info > div > img {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.detail_view_box > div > .sub_info > div > span {
+  margin-left: 10px;
+  font-size: 35px;
+  vertical-align: middle;
+}

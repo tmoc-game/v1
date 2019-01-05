@@ -1,0 +1,18 @@
+.buyLayout {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.buyLayout > div {
+  text-align: center;
+}
+.buyLayout > .itemList {
+  width: 60%;
+}
+.buyLayout > .itemDetailView {
+  width: 40%;
+  height: 500px;
+}
+.buyLayout > .tradeBar {
+  width: 100%;
+}
