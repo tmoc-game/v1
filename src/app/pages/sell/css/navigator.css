@@ -1,0 +1,23 @@
+.buy_navigator {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buy_navigator > div {
+  padding-right: 35px;
+}
+
+.buy_navigator > * > button {
+  width: 150px;
+  height : 100px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
+  margin: 4px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: pink;
+}

@@ -1,0 +1,44 @@
+.itemListBox{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+}
+
+.itemListBox > div {
+  flex: 0;
+  border : 1px solid black;
+  margin: 10px;
+  padding : 10px;
+  width: 100%;
+  height: 250px;
+}
+
+.itemListBox > * > .icon {
+  text-align: center;
+}
+.itemListBox > * > .icon > img {
+  width: 170px;
+  height: 170px;
+}
+
+.itemListBox > .icon > img {
+  width: 170px;
+  height: 170px;
+  margin: auto;
+}
+
+.itemListBox > * > .information > div {
+  text-align: left;
+  margin-left: 15px;
+}
+.itemListBox > * > .information > div > span {
+  font-size: 30px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.itemListBox > * > .information > div > img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}

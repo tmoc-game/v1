@@ -2,35 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GameBoard from '../../components/gameboard';
-import Item from './item';
+import Header from '../../components/header';
+import ItemList from '../../components/itemlist';
 import Controller from './controler';
 import Navigator from './navigator';
 
-import './css/page.css';
+import '../../css/gameboard_layout.css';
 
 function Inventory(props) {
   const { gameStatus, currentInventory, products } = props;
-  const userInventory = gameStatus.inventory;
   const rentFee = currentInventory.daily_price;
 
+  // Build a list array
+  const userInventory = gameStatus.inventory;
+  const itemList = Object.keys(userInventory)
+    .map((k) => ({
+      code: k,
+      image_url: products[k].image_url,
+      price: userInventory[k].avg_buying_price,
+      quantity: userInventory[k].quantity,
+    }));
+
   return (
-    <div>
-      <div className="inventory_bg">
-        <div className="inventory_item_list_box">
-          {Object.keys(userInventory)
-            .map((k) => (
-              <Item key={k} product={products[k]} item={userInventory[k]} />
-            ))
-          }
-        </div>
-        <div className="inventory_control_box">
-          <Controller rentFee={rentFee} />
-        </div>
-        <div className="inventory_navigate_box">
-          <Navigator />
+    <div className="gameBoardLayout">
+      <div className="boardHeader">
+        <Header gameStatus={gameStatus} products={products} currentInventory={currentInventory} />
+      </div>
+      <div className="boardBody">
+        <div className="box">
+          <div className="itemList">
+            <div className="boardBox">
+              <ItemList list={itemList} />
+            </div>
+          </div>
+          <div className="itemDetailView">
+            <div className="boardBox">
+              <Controller rentFee={rentFee} />
+            </div>
+          </div>
         </div>
       </div>
-    </div>);
+      <div className="boarderFooter">
+        <Navigator />
+      </div>
+    </div>
+  );
 }
 
 Inventory.propTypes = {

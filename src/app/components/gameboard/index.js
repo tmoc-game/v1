@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Header from '../../components/header';
 import { getCurrentGameStatus } from '../../redux/status/actions';
 
 export default function GameBoard(WrappedComponent) {
@@ -13,18 +12,14 @@ export default function GameBoard(WrappedComponent) {
 
     render() {
       // Loading Check...
-      const { gameStatus, inventory, products } = this.props;
+      const { gameStatus, inventory } = this.props;
       if (gameStatus.day < 0 || Object.keys(inventory).length < 0) return <div>Now Loading...</div>;
 
       // find my current inventory
       const inventoryLevel = gameStatus.inventory_level;
       const currentInventory = inventory[inventoryLevel];
 
-      return (
-        <div>
-          <Header gameStatus={gameStatus} products={products} currentInventory={currentInventory} />
-          <WrappedComponent {...this.props} currentInventory={currentInventory} />
-        </div>);
+      return (<WrappedComponent {...this.props} currentInventory={currentInventory} />);
     }
   }
 

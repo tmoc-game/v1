@@ -1,129 +1,62 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import GameBoard from '../../components/gameboard';
+import Header from '../../components/header';
+import ItemList from '../../components/itemlist';
+import DetailView from './detail';
+import NavigatorView from './navigator';
+
 import '../../css/buy.css';
 
-function Sell() {
+function Sell(props) {
+  const { products, currentInventory, gameStatus } = props;
+
+  // Build a list array
+  const userInventory = gameStatus.inventory;
+  const itemList = Object.keys(userInventory)
+    .map((k) => ({
+      code: k,
+      image_url: products[k].image_url,
+      price: userInventory[k].avg_buying_price,
+      quantity: userInventory[k].quantity,
+    }));
+
   return (
-    <div>
-      <div className="inventory_div">
-        <div className="inventory_one_div">
-          <div className="left_div">
-            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
-          </div>
-          <div className="left_div">
-            <div style={{ fontSize: '30px' }}>
-              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
-            </div>
-            <div style={{ fontSize: '30px' }}>
-              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+    <div className="gameBoardLayout">
+      <div className="boardHeader">
+        <Header gameStatus={gameStatus} products={products} currentInventory={currentInventory} />
+      </div>
+      <div className="boardBody">
+        <div className="box">
+          <div className="itemList">
+            <div className="boardBox">
+              <ItemList list={itemList} />
             </div>
           </div>
-        </div>
-        <div className="inventory_one_div">
-          <div className="left_div">
-            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
-          </div>
-          <div className="left_div">
-            <div style={{ fontSize: '30px' }}>
-              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
-            </div>
-            <div style={{ fontSize: '30px' }}>
-              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
-            </div>
-          </div>
-        </div>
-        <div className="inventory_one_div">
-          <div className="left_div">
-            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
-          </div>
-          <div className="left_div">
-            <div style={{ fontSize: '30px' }}>
-              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
-            </div>
-            <div style={{ fontSize: '30px' }}>
-              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
-            </div>
-          </div>
-        </div>
-        <div className="inventory_one_div" clear="both">
-          <div className="left_div">
-            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
-          </div>
-          <div className="left_div">
-            <div style={{ fontSize: '30px' }}>
-              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
-            </div>
-            <div style={{ fontSize: '30px' }}>
-              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
-            </div>
-          </div>
-        </div>
-        <div className="inventory_one_div" clear="both">
-          <div className="left_div">
-            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
-          </div>
-          <div className="left_div">
-            <div style={{ fontSize: '30px' }}>
-              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
-            </div>
-            <div style={{ fontSize: '30px' }}>
-              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
-            </div>
-          </div>
-        </div>
-        <div className="inventory_one_div" clear="both">
-          <div className="left_div">
-            <img alt="cucumber" src="/image/cucumber.jpeg" width={170} height={170} />
-          </div>
-          <div className="left_div">
-            <div style={{ fontSize: '30px' }}>
-              <img alt="coin" src="/image/coin.jpg" width={30} height={30} /> 20
-            </div>
-            <div style={{ fontSize: '30px' }}>
-              <img alt="inventory" src="/image/inventory.png" width={30} height={30} /> 200
+          <div className="itemDetailView">
+            <div className="boardBox">
+              <DetailView
+                selectedProduceCode="0"
+                products={products}
+                gameStatus={gameStatus}
+                currentInventory={currentInventory}
+              />
             </div>
           </div>
         </div>
       </div>
-      <div className="content_div">
-        <div className="content_one_div">
-          <div className="left_div">
-            <img alt="cucumber" src="/image/cucumber.jpeg" width={100} height={100} />
-          </div>
-          <div className="left_div">
-            <div><img alt="coin" src="/image/coin.jpg" width="30" height="30" />80</div>
-            <div><img alt="coin" src="/image/inventory.png" width="30" height="30" />80</div>
-          </div>
-        </div>
-        <div className="content_one_div">cucumber</div>
-        <div className="content_one_div">
-          <div className="slidecontainer">
-            <input type="range" min="1" max="57" value="0" className="slider" id="myRange" />
-          </div>
-        </div>
-        <div className="content_one_div">inventory average<br />
-          <img alt="coin" src="/image/coin.jpg" width="30" height="30" />80
-        </div>
+      <div className="boarderFooter">
+        <NavigatorView />
       </div>
-      <div className="button_div">
-        <div className="left_div" style={{ fontSize: '50px' }}>income:
-          <img alt="coin" src="/image/coin.jpg" width="100" height="100" /> 2000
-        </div>
-        <div className="left_div" style={{ fontSize: '50px' }}>
-          <img alt="inventory" src="/image/inventory.png" width="100" height="100" /> 2000
-        </div>
-        <div className="left_div">
-          <button className="inventory_button">Max</button>
-        </div>
-        <div className="left_div">
-          <button className="inventory_button">Sell</button>
-        </div>
-      </div>
-    </div>);
+    </div>
+  );
 }
 
 Sell.propTypes = {
+  products: PropTypes.object,
+  gameStatus: PropTypes.object,
+  currentInventory: PropTypes.object,
 };
 
 const SellView = GameBoard(Sell);
