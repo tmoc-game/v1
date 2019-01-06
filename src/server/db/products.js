@@ -1,7 +1,7 @@
 
 module.exports = {
   0: {
-    label: 'Cocumber',
+    label: 'Cucumber',
     kind: 0,
     random_param: {
       min_price: 10,
@@ -19,7 +19,7 @@ module.exports = {
       min_price: 10,
       max_price: 400,
       max_quantity: 99,
-      min_quantity: 1,
+      min_quantity: 0,
     },
     use_inventory_slot: 1,
     image_url: '/image/cucumber.jpeg',
@@ -55,7 +55,7 @@ module.exports = {
       min_price: 10,
       max_price: 400,
       max_quantity: 99,
-      min_quantity: 1,
+      min_quantity: 0,
     },
     use_inventory_slot: 1,
     image_url: '/image/cucumber.jpeg',

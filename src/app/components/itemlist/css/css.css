@@ -13,31 +13,44 @@
   height: 250px;
 }
 
+.itemListBox > .selected {
+  background: lightblue;
+}
+
+.itemListBox > div > button {
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  cursor: pointer;
+}
+
+
+
 .itemListBox > * > .icon {
   text-align: center;
 }
-.itemListBox > * > .icon > img {
+.itemListBox > div > button > .icon > img {
   width: 170px;
   height: 170px;
 }
 
-.itemListBox > .icon > img {
+.itemListBox > div > button > .icon > img {
   width: 170px;
   height: 170px;
   margin: auto;
 }
 
-.itemListBox > * > .information > div {
+.itemListBox > div > * > .information > div {
   text-align: left;
   margin-left: 15px;
 }
-.itemListBox > * > .information > div > span {
+.itemListBox > div > * > .information > div > span {
   font-size: 30px;
   margin-left: 10px;
   vertical-align: middle;
 }
 
-.itemListBox > * > .information > div > img {
+.itemListBox > div > * > .information > div > img {
   width: 30px;
   height: 30px;
   vertical-align: middle;

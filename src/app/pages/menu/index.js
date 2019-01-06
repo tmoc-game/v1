@@ -2,14 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getCurrentGameStatus } from '../../redux/status/actions';
+import { getCurrentGameStatus, startANewGame } from '../../redux/status/actions';
 
 import '../../css/menu.css';
+
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Menu extends React.Component {
   componentWillMount() {
     this.props.getCurrentGameStatus();
+  }
+
+  isAvaliableContinue() {
+    return this.props.day >= 0;
+  }
+
+  startANewGame() {
+    this.props.startANewGame(this.isAvaliableContinue());
   }
 
   render() {
@@ -18,13 +27,10 @@ class Menu extends React.Component {
     return (
       <div>
         <div className="menu_div">
-
           <p>
-            <Link to="inventory">
-              <button className="menu_button">Start a new game</button>
-            </Link>
+            <button className="menu_button" onClick={() => this.startANewGame()}>Start a new game</button>
           </p>
-          { (day >= 0) ? (
+          { (this.isAvaliableContinue()) ? (
             <p>
               <Link to="inventory">
                 <button className="menu_button">Continue the game</button>
@@ -40,6 +46,7 @@ class Menu extends React.Component {
 Menu.propTypes = {
   day: PropTypes.number,
   getCurrentGameStatus: PropTypes.func,
+  startANewGame: PropTypes.func,
 };
 
 function mapStateToProps(state) {
@@ -51,6 +58,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getCurrentGameStatus: () => dispatch(getCurrentGameStatus()),
+    startANewGame: (isAvaliableContinue) => dispatch(startANewGame(isAvaliableContinue)),
   };
 }
 

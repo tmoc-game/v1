@@ -2,15 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GameBoard from '../../components/gameboard';
-import Header from '../../components/header';
 import ItemList from '../../components/itemlist';
-import ItemDetailView from './item_detail_view';
+import ItemDetailView from '../../components/item_detail_view';
 import BuyNavigator from './navigator';
 
 import '../../css/gameboard_layout.css';
 
 function Buy(props) {
-  const { products, currentInventory, gameStatus } = props;
+  const {
+    products,
+    gameStatus,
+    selectedItemCode,
+    selectedAmount,
+    onChangeSelectedAmount
+  } = props;
 
   // Build a list array
   const priceTable = gameStatus.product_price_table;
@@ -21,33 +26,46 @@ function Buy(props) {
       price: priceTable[k].price,
       quantity: priceTable[k].quantity,
     }));
+  const selectedItemDetailInfo = products[selectedItemCode] == null ?
+    null :
+    {
+      code: selectedItemCode,
+      ...products[selectedItemCode],
+      ...priceTable[selectedItemCode],
+      ownInventory: gameStatus.inventory[selectedItemCode],
+    };
+
+  const maxQuantity = selectedItemDetailInfo != null ? selectedItemDetailInfo.quantity : 0;
 
   return (
     <div className="gameBoardLayout">
-      <div className="boardHeader">
-        <Header gameStatus={gameStatus} products={products} currentInventory={currentInventory} />
-      </div>
       <div className="boardBody">
         <div className="box">
           <div className="itemList">
             <div className="boardBox">
-              <ItemList list={itemList} />
+              <ItemList
+                list={itemList}
+                selectedItemCode={selectedItemCode}
+                onSelectItem={props.onSelectItem}
+              />
             </div>
           </div>
           <div className="itemDetailView">
             <div className="boardBox">
               <ItemDetailView
-                selectedProduceCode="0"
-                products={products}
-                gameStatus={gameStatus}
-                currentInventory={currentInventory}
+                itemInfo={selectedItemDetailInfo}
+                selectedAmount={selectedAmount}
+                onChangeSelectedAmount={onChangeSelectedAmount}
               />
             </div>
           </div>
         </div>
       </div>
       <div className="boarderFooter">
-        <BuyNavigator />
+        <BuyNavigator
+          onClickMax={() => onChangeSelectedAmount(maxQuantity)}
+          onClickBuy={() => (selectedItemDetailInfo != null ? props.buy(selectedItemCode, selectedAmount) : null)}
+        />
       </div>
     </div>
   );
@@ -55,7 +73,11 @@ function Buy(props) {
 Buy.propTypes = {
   products: PropTypes.object,
   gameStatus: PropTypes.object,
-  currentInventory: PropTypes.object,
+  selectedItemCode: PropTypes.any,
+  onSelectItem: PropTypes.func,
+  selectedAmount: PropTypes.number,
+  onChangeSelectedAmount: PropTypes.func,
+  buy: PropTypes.func,
 };
 
 const BuyView = GameBoard(Buy);

@@ -189,7 +189,7 @@ product_price_table = {
 #### API Result Message 정의
 ```
 {
-  "result": boolean // true : 성공, false: 실패
+  "result": number // 
   "message": string // 실패 사유 -> 창고 임대료 부족
 }
 ```
@@ -205,6 +205,7 @@ product_price_table = {
 * 0x0104 : Inventory Maximum level
 * 0x0105 : Inventory is not empty ( 마지막 날 sleeping 시 )
 * 0x0106 : 저장된 게임이 없습니다.
+* 0x0107 : Inventory Minimum level
 
 !!! 위의 API에서는 모든 post, put 요청에 성공 실패가 없음, 그래서 성공 실패에 대한 내용을 넣고, 아래의 API를 통해 상태를 불러 오도록 하는건 어떨까?
 
@@ -213,8 +214,8 @@ product_price_table = {
 [V] 프로젝트 구성 (React.js + Redux + Axio + Node.js + Express)
 [V] 데이터 구조 정의
 [V] Restfull api 정의 (기능 기준)
-[] 메뉴 화면 구현
-[] 창고 화면 구현
+[V] 메뉴 화면 구현
+[V] 창고 화면 구현
 [] 물품 구매 화면 구현
 [] 물품 판매 화면 구현
 [] 엔딩 화면 구현

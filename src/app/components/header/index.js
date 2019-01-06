@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -16,11 +18,11 @@ export default function Header(props) {
 
   const inventoryUsage = Object.keys(gameStatus.inventory)
     .map((k) => products[k].use_inventory_slot * gameStatus.inventory[k].quantity)
-    .reduce(accumulater);
+    .reduce(accumulater, 0);
 
   return (
     <div className="header">
-      <div>
+      <div onClick={() => window.history.back()}>
         <img alt="Back" src="/image/backArrow.png" width={75} height={75} />
       </div>
       <div>

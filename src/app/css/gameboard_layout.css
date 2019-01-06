@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column;
   justify-content: stretch;
-  height:100vh;
+  height:100%;
 }
 .gameBoardLayout > div {
   text-align: center;
@@ -27,12 +27,12 @@
 }
 
 .box > .itemList {
-  width: 60%;
+  flex: 1;
   display: grid;
 }
 
 .box > .itemDetailView {
-  width: 40%;
+  width: 600px;
   display: grid;
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GameBoard from '../../components/gameboard';
-import Header from '../../components/header';
 import ItemList from '../../components/itemlist';
 import Controller from './controler';
 import Navigator from './navigator';
@@ -10,7 +9,16 @@ import Navigator from './navigator';
 import '../../css/gameboard_layout.css';
 
 function Inventory(props) {
-  const { gameStatus, currentInventory, products } = props;
+  const {
+    gameStatus,
+    currentInventory,
+    products,
+    upgradeInventory,
+    downgradeInventory,
+    inventory,
+    sleep,
+  } = props;
+
   const rentFee = currentInventory.daily_price;
 
   // Build a list array
@@ -23,11 +31,11 @@ function Inventory(props) {
       quantity: userInventory[k].quantity,
     }));
 
+  const nextLevelInventory = inventory[gameStatus.inventory_level + 1];
+  const prevLevelInventory = inventory[gameStatus.inventory_level - 1];
+
   return (
     <div className="gameBoardLayout">
-      <div className="boardHeader">
-        <Header gameStatus={gameStatus} products={products} currentInventory={currentInventory} />
-      </div>
       <div className="boardBody">
         <div className="box">
           <div className="itemList">
@@ -37,13 +45,17 @@ function Inventory(props) {
           </div>
           <div className="itemDetailView">
             <div className="boardBox">
-              <Controller rentFee={rentFee} />
+              <Controller
+                rentFee={rentFee}
+                upgrade={() => upgradeInventory(nextLevelInventory)}
+                downgrade={() => downgradeInventory(prevLevelInventory)}
+              />
             </div>
           </div>
         </div>
       </div>
       <div className="boarderFooter">
-        <Navigator />
+        <Navigator sleep={() => sleep()} />
       </div>
     </div>
   );
@@ -52,7 +64,11 @@ function Inventory(props) {
 Inventory.propTypes = {
   products: PropTypes.object,
   gameStatus: PropTypes.object,
+  inventory: PropTypes.object,
   currentInventory: PropTypes.object,
+  upgradeInventory: PropTypes.func,
+  downgradeInventory: PropTypes.func,
+  sleep: PropTypes.func,
 };
 
 const InventoryView = GameBoard(Inventory);

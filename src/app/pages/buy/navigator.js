@@ -1,21 +1,24 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './css/navigator.css';
 
-function BuyNavigator() {
+function BuyNavigator(props) {
   return (
     <div className="buy_navigator">
       <div>
-        <button>Max</button>
+        <button onClick={props.onClickMax}>Max</button>
       </div>
       <div>
-        <button>Buy</button>
+        <button onClick={props.onClickBuy}>Buy</button>
       </div>
     </div>
   );
 }
 
-BuyNavigator.propTypes = {};
+BuyNavigator.propTypes = {
+  onClickMax: PropTypes.func,
+  onClickBuy: PropTypes.func,
+};
 
 export default BuyNavigator;

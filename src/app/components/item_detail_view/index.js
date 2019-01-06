@@ -1,46 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './css/detail.css';
+import './css/css.css';
 
 export default function ItemDetailView(props) {
   const {
-    products,
-    gameStatus,
-    selectedProduceCode,
+    itemInfo,
+    selectedAmount
   } = props;
 
-  if (selectedProduceCode == null) return <div>Please select product</div>;
-
-  const product = products[selectedProduceCode];
-  const priceTableItem = gameStatus.product_price_table[selectedProduceCode];
-  const userInventoryItem = gameStatus.inventory[selectedProduceCode] == null ?
-    { avg_buying_price: 0 } :
-    gameStatus.inventory[selectedProduceCode];
-
-  const selectedAmountOftheProduct = 10;
-
+  if (itemInfo == null) return <div>Please select product</div>;
   return (
     <div className="detail_view_box">
       <div className="product_info">
         <div>
           <div className="icon">
-            <img alt="cucumber" src={product.image_url} />
+            <img alt="cucumber" src={itemInfo.image_url} />
           </div>
           <div className="describe">
             <div className="product_name">
-              <span>{product.label}</span>
+              <span>{itemInfo.label}</span>
             </div>
             <div>
               <img alt="coin" src="/image/coin.jpg" width="30" height="30" />
               <span>
-                {priceTableItem.price}
+                {itemInfo.price}
               </span>
             </div>
             <div>
               <img alt="box" src="/image/inventory.png" width="30" height="30" />
               <span>
-                {priceTableItem.quantity}
+                {itemInfo.quantity}
               </span>
             </div>
           </div>
@@ -48,9 +38,16 @@ export default function ItemDetailView(props) {
       </div>
       <div>
         <div className="buy_quantity">
-          <span>Buy : </span>
-          <input type="range" min={0} max={priceTableItem.quantity} value={selectedAmountOftheProduct} className="slider" id="myRange" />
-          <span> [ {selectedAmountOftheProduct} ]</span>
+          <span>Quantity : </span>
+          <input
+            type="range"
+            min={0}
+            max={itemInfo.quantity}
+            value={selectedAmount}
+            className="slider"
+            onChange={((e) => props.onChangeSelectedAmount(e.target.value))}
+          />
+          <span> [ {selectedAmount} ]</span>
         </div>
       </div>
       <div>
@@ -59,14 +56,14 @@ export default function ItemDetailView(props) {
             <p>avg</p>
             <img alt="coin" src="/image/coin.jpg" width="30" height="30" />
             <span>
-              {userInventoryItem.avg_buying_price}
+              {itemInfo.ownInventory ? itemInfo.ownInventory.avg_buying_price : 0}
             </span>
           </div>
           <div>
             <p>price</p>
             <img alt="coin" src="/image/coin.jpg" width="30" height="30" />
             <span>
-              {selectedAmountOftheProduct * priceTableItem.price}
+              {selectedAmount * itemInfo.price}
             </span>
           </div>
         </div>
@@ -75,7 +72,7 @@ export default function ItemDetailView(props) {
 }
 
 ItemDetailView.propTypes = {
-  products: PropTypes.object,
-  gameStatus: PropTypes.object,
-  selectedProduceCode: PropTypes.string,
+  itemInfo: PropTypes.object,
+  selectedAmount: PropTypes.any,
+  onChangeSelectedAmount: PropTypes.func,
 };
