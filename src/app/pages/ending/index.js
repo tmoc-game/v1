@@ -1,25 +1,45 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import formatter from '../../util/formatter';
+
 import '../../css/ending.css';
 
-export default function End() {
-  return (
-    <div>
-      <h1>Total amount of money</h1>
-      <div className="end_divA">$1,000,000</div>
-      <div className="end_divB">
-        <ul>
-          <li>start date : 02/23/2018</li>
-          <li>end date : 03/23/2018</li>
-        </ul>
+// eslint-disable-next-line react/prefer-stateless-function
+class End extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Total amount of money</h1>
+        <div className="end_divA">
+          {formatter.format(this.props.money)}
+        </div>
+        <br />
+        <h2><Link to="/menu">Home</Link></h2>
       </div>
-      <div className="end_divC">the number of trades</div>
-      <div className="end_divB">
-        <ul>
-          <li>buy : 50</li>
-          <li>sell : 49</li>
-        </ul>
-      </div>
-    </div>
-  );
+    );
+  }
 }
+
+End.propTypes = {
+  money: PropTypes.number,
+};
+
+function mapStateToProps(state) {
+  return {
+    money: state.status.money,
+  };
+}
+
+function mapDispatchToProps() {
+  return {};
+}
+
+const EndView = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(End);
+
+export default EndView;

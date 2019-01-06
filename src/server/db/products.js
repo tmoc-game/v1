@@ -22,7 +22,7 @@ module.exports = {
       min_quantity: 0,
     },
     use_inventory_slot: 1,
-    image_url: '/image/cucumber.jpeg',
+    image_url: '/image/carrot.jpg',
   },
   2: {
     label: 'Onion',
@@ -34,7 +34,7 @@ module.exports = {
       min_quantity: 1,
     },
     use_inventory_slot: 1,
-    image_url: '/image/cucumber.jpeg',
+    image_url: '/image/onion.jpg',
   },
   3: {
     label: 'Pork',
@@ -46,7 +46,7 @@ module.exports = {
       min_quantity: 1,
     },
     use_inventory_slot: 1,
-    image_url: '/image/cucumber.jpeg',
+    image_url: '/image/pork.jpeg',
   },
   4: {
     label: 'Ham',
@@ -58,6 +58,90 @@ module.exports = {
       min_quantity: 0,
     },
     use_inventory_slot: 1,
-    image_url: '/image/cucumber.jpeg',
+    image_url: '/image/ham.jpeg',
+  },
+  5: {
+    label: 'apple',
+    kind: 0,
+    random_param: {
+      min_price: 10,
+      max_price: 400,
+      max_quantity: 99,
+      min_quantity: 0,
+    },
+    use_inventory_slot: 1,
+    image_url: '/image/apple.jpg',
+  },
+  6: {
+    label: 'beef',
+    kind: 0,
+    random_param: {
+      min_price: 10,
+      max_price: 400,
+      max_quantity: 99,
+      min_quantity: 0,
+    },
+    use_inventory_slot: 1,
+    image_url: '/image/beef.jpg',
+  },
+  7: {
+    label: 'chicken',
+    kind: 0,
+    random_param: {
+      min_price: 10,
+      max_price: 400,
+      max_quantity: 99,
+      min_quantity: 0,
+    },
+    use_inventory_slot: 1,
+    image_url: '/image/chicken.jpg',
+  },
+  8: {
+    label: 'garlic',
+    kind: 0,
+    random_param: {
+      min_price: 10,
+      max_price: 400,
+      max_quantity: 99,
+      min_quantity: 0,
+    },
+    use_inventory_slot: 1,
+    image_url: '/image/garlic.jpg',
+  },
+  9: {
+    label: 'milk',
+    kind: 0,
+    random_param: {
+      min_price: 10,
+      max_price: 400,
+      max_quantity: 99,
+      min_quantity: 0,
+    },
+    use_inventory_slot: 1,
+    image_url: '/image/milk.jpeg',
+  },
+  10: {
+    label: 'orange',
+    kind: 0,
+    random_param: {
+      min_price: 10,
+      max_price: 400,
+      max_quantity: 99,
+      min_quantity: 0,
+    },
+    use_inventory_slot: 1,
+    image_url: '/image/orange.jpg',
+  },
+  11: {
+    label: 'sausage',
+    kind: 0,
+    random_param: {
+      min_price: 10,
+      max_price: 400,
+      max_quantity: 99,
+      min_quantity: 0,
+    },
+    use_inventory_slot: 1,
+    image_url: '/image/sausage.jpg',
   }
 };

@@ -1,3 +1,3 @@
 module.exports = {
-  finishDay: 100,
+  finishDay: 10,
 };

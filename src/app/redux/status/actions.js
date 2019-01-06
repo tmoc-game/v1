@@ -152,7 +152,7 @@ export function buy(code, quantity) {
         }
       })
       .catch((err) => {
-        alert(`Sleep error ${err}`);
+        alert(`Buy error ${err}`);
         console.log(err);
       });
   };
@@ -174,7 +174,7 @@ export function sell(code, quantity) {
         }
       })
       .catch((err) => {
-        alert(`Sleep error ${err}`);
+        alert(`Sell error ${err}`);
         console.log(err);
       });
   };

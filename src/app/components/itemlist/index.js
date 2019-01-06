@@ -14,7 +14,7 @@ export default function ItemList(props) {
         <div key={item.code} className={selectedItemCode === item.code ? 'selected' : ''}>
           <button onClick={() => (onSelectItem ? onSelectItem(item.code) : null)} >
             <div className="icon">
-              <img alt="cucumber" src={item.image_url} />
+              <img alt={item.image_url} src={item.image_url} />
             </div>
             <div className="information">
               <div>

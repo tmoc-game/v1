@@ -3,15 +3,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import formatter from '../../util/formatter';
+
 import './css/css.css';
 
 const accumulater = (ac, cv) => ac + cv;
-
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD',
-  minimumFractionDigits: 0
-});
 
 export default function Header(props) {
   const { gameStatus, currentInventory, products } = props;
