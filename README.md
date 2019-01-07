@@ -27,8 +27,9 @@
 
 #### Server
 * 기본 가격 테이블
-Finish_day:number // 게임 플레이 
 ```
+Finish_day:number // 게임 플레이 
+
 inventory = {
   [level:number] : {
     size: number,
@@ -121,19 +122,25 @@ product_price_table = {
 
 ### API 정의
 
-* GET   /api/load_default_settings : 서버에 셋팅된 products 들을 가져온다.
+#### GET   /api/load_default_settings : 서버에 셋팅된 products 들을 가져온다.
+* Response
 ```
 {
   "finish_day": number,
   "products": { -- same as server },
   "inventory": { -- same as server }
 }
-
 ```
-* GET /api/game_status    : 현재의 게임 상황을 가져온다.
+
+#### GET /api/game_status    : 현재의 게임 상황을 가져온다.
+
+* Response
+```
 {
   --- same as server
 }
+```
+
 * GET /api/product_prices : 현재의 상품 정볼르 가져온다.
 
 * GET   /api/loadgame : 저장된 게임을 불러 온다.
@@ -210,13 +217,13 @@ product_price_table = {
 !!! 위의 API에서는 모든 post, put 요청에 성공 실패가 없음, 그래서 성공 실패에 대한 내용을 넣고, 아래의 API를 통해 상태를 불러 오도록 하는건 어떨까?
 
 ### Todo List
-[V] UI Html 작성
-[V] 프로젝트 구성 (React.js + Redux + Axio + Node.js + Express)
-[V] 데이터 구조 정의
-[V] Restfull api 정의 (기능 기준)
-[V] 메뉴 화면 구현
-[V] 창고 화면 구현
-[] 물품 구매 화면 구현
-[] 물품 판매 화면 구현
-[] 엔딩 화면 구현
-[] 로그인 로직 구현
+- [v] UI Html 작성
+- [v] 프로젝트 구성 (React.js + Redux + Axio + Node.js + Express)
+- [v] 데이터 구조 정의
+- [v] Restfull api 정의 (기능 기준)
+- [v] 메뉴 화면 구현
+- [v] 창고 화면 구현
+- [v] 물품 구매 화면 구현
+- [v] 물품 판매 화면 구현
+- [v] 엔딩 화면 구현
+- [ ] 로그인 로직 구현
