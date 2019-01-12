@@ -17,7 +17,7 @@ class End extends React.Component {
           {formatter.format(this.props.money)}
         </div>
         <br />
-        <h2><Link to="/menu">Home</Link></h2>
+        <h2><Link to="/">Home</Link></h2>
       </div>
     );
   }

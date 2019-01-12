@@ -2,9 +2,7 @@
 import axios from 'axios';
 import * as t from '../types';
 
-function goTo(path) {
-  window.location.href = `#${path}`;
-}
+import { goTo } from '../../util/route';
 
 export function setGameStatus(status) {
   return {
