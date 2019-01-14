@@ -1,0 +1,88 @@
+.ending_layout {
+  height : 780px;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-around;
+  margin : 10px;
+}
+.ending_layout > div {
+  margin : 10px;
+  flex-basis : auto;
+  text-align : center;
+  height : 240px;
+  vertical-align : middle;
+  display : flex;
+}
+.top_text {
+  margin : auto;
+  text-align : center;
+  font-size : 120px;
+}
+.middle_innerBox {
+  display : flex;
+  height : 240px;
+  width : 100%;
+}
+.pic_box {
+  width : 63%;
+}
+
+.pic_box > .ending_p > img {
+  float : right;
+  max-height: 100%;
+}
+.button_box {
+  width : 37%;
+}
+.button_inner {
+  width : 100%;
+  height : 100%;
+  display : flex;
+  flex-direction : column;
+  justify-content : space-around;
+}
+.button_inner > div {
+  flex-grow : 1;
+  margin-top : 20px;
+  margin-bottom : 20px;
+  margin-left : 0;
+  padding-right: 60px;
+  width : 60%;
+  height : 70px;
+  align-self : flex-end;
+}
+.ending_btn {
+  width : 100%;
+  height : 100%;
+  font-size : 60px;
+  border-radius : 15px;
+  background-color:  pink;
+  color : white;
+  border : none;
+}
+.bottom_inner {
+  height : 240px;
+  width : 100%;
+  display : flex;
+  flex-direction : column;
+}
+.money_text {
+  flex-grow : 1;
+  text-align : center;
+  font-size : 50px;
+  margin : 5px;
+  display : flex;
+}
+.money_box {
+  flex-grow : 2;
+  text-align : center;
+  font-size : 100px;
+  margin : 5px;
+  display : flex;
+}
+.ending_p {
+  margin : auto;
+  text-align : center;
+  height : 100%;
+}
+
