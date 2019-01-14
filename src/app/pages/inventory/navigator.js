@@ -18,8 +18,8 @@ function InventoryNavigator(props) {
         </Link>
       </div>
       <div className="left_div" >
-        <button onClick={props.sleep} >
-          <img alt="sleep" src="/image/sleep.png" width={150} height={150} />
+        <button className="img_button" onClick={props.sleep} >
+          <img alt="sleep" src="/image/sleep.png" width={150} height={110} />
         </button>
       </div>
     </div>
