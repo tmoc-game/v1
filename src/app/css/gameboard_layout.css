@@ -18,7 +18,7 @@
 }
 
 .boardBody > .box {
-  height: 100%;
+  height: calc(100vh - 250px);
   display: flex;
   flex-direction: row;
   align-items: stretch;
