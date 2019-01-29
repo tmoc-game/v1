@@ -67,7 +67,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    startANewGame: (isAvaliableContinue) => dispatch(startANewGame(isAvaliableContinue)),
+    startANewGame: () => dispatch(startANewGame(true)),
   };
 }
 
